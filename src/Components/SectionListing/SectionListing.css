@@ -1,0 +1,20 @@
+.section-listing-container{
+    width: 250px;
+    max-height: calc(100vh - 50px);
+    list-style-type: none;
+    overflow-y: auto;
+    padding-bottom: 1rem;
+}
+.section-link{
+    
+    padding: .5rem;
+    padding-left: 2rem;
+    text-align: left;
+    border-bottom: 1px solid rgb(199, 199, 199);
+}
+.active{
+    background-color: rgb(209, 209, 209);
+}
+.section-link:hover{
+    cursor: pointer;
+}

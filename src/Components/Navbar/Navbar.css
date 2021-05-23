@@ -1,0 +1,47 @@
+nav{
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #7e7e7e;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+.logout{
+    border: 2px solid rgb(255, 68, 68);
+    padding: .2rem .4rem;
+    margin-right: .5rem;
+    border-radius: 7px;
+    color: rgb(255, 18, 18) !important;
+    transition: .3s;
+    display: flex;
+    align-items: center;
+}
+.logout:hover{
+    background-color:rgb(255, 68, 68) ;
+    color: #fff !important;
+    cursor: pointer;
+    transition: .3s;
+}
+
+nav h1{
+    padding-left: 15px;
+    margin: 0;
+    color:#1794fa;
+}
+.logo-container{
+    display: flex;
+    align-items: center;
+}
+.logo{
+    width: 10rem;
+    margin-left: 1rem;
+}
+.profile{
+    display: flex;
+    align-items: center;
+    padding: 0 .5rem;
+}
+.profile .icon{
+    font-size: 2rem;
+    margin-right: .3rem;
+}

@@ -1,0 +1,25 @@
+.profile-container{
+    height: calc(100vh - 50px);
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    flex-direction: column;
+    margin-top: 3rem;
+    position: relative;
+}
+.profile-container .icon{
+    font-size: 5rem;
+}
+.profile-container span{
+    padding: .5rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+}
+.profile-container span .icon{
+    margin-right: 1rem;
+    font-size: 1.1rem;
+
+}
