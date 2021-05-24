@@ -4,7 +4,7 @@ import axios from 'axios';
 import { API_KEY } from '../../Utils/Apikeys';
 
 
-const SectionListing = ({selectedSection,setSelectedSection}) => {
+const SectionListing = ({selectedSection,setSelectedSection,setFilter}) => {
 
     const [sections, setSections] = useState([{section: "all", display_name: "All"}]);
 
@@ -23,7 +23,7 @@ const SectionListing = ({selectedSection,setSelectedSection}) => {
                     return(
                         <li key={section.section} 
                         className={selectedSection === section.section ? "section-link active" : "section-link" }
-                        onClick={()=>setSelectedSection(section.section)
+                        onClick={()=>{setSelectedSection(section.section);setFilter(false)}
                         
                         }
                         >

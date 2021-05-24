@@ -4,6 +4,8 @@
     list-style-type: none;
     overflow-y: auto;
     padding-bottom: 1rem;
+    background-color: #fff;
+    box-sizing: border-box;
 }
 .section-link{
     

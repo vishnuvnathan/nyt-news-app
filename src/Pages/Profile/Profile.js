@@ -70,7 +70,7 @@ const Profile = () => {
                 </span>
                 <span>
                     <button onClick={()=>setShowModal(true)}>
-                        Change Name Or PassWord
+                        Change Name <br />or <br /> Password
                     </button>
                 </span>
 

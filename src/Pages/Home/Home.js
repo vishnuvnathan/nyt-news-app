@@ -3,13 +3,14 @@ import './Home.css';
 import axios from 'axios';
 import SectionListing from '../../Components/SectionListing/SectionListing';
 import NewsArticle from '../../Components/NewsArticle/NewsArticle';
-
+import { AiOutlineFilter } from "react-icons/ai";
 
 
 const Home = () => {
 
 	const [selectedSection, setSelectedSection] = useState('all'); 
 	const [user, setUser] = useState({});
+	const [filter, setFilter] = useState(false);
 
 	useEffect(() => {
         let getUser = localStorage.getItem('loggedInUser');
@@ -26,7 +27,19 @@ const Home = () => {
 
 		return (
 			<div className="home-container">
-				<SectionListing selectedSection={selectedSection} setSelectedSection={setSelectedSection} />
+				<div className={filter ? "sidebar open" : "sidebar"}>
+					<SectionListing selectedSection={selectedSection} setSelectedSection={setSelectedSection} setFilter={setFilter}/>
+				</div>
+				<button className={filter ? "filter filter-close" : "filter"} onClick={()=>setFilter(!filter)}>
+					{
+						filter ? 
+							"Close"
+							:
+							<><AiOutlineFilter className="icon"/> Filter</>
+					}
+
+
+				</button>
 				<NewsArticle selectedSection={selectedSection} setSelectedSection={setSelectedSection} user={user}/>
 			</div>
 		);
