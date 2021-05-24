@@ -7,6 +7,7 @@ import { useState } from 'react';
 import {format} from 'date-fns';
 import Pagination from '../Pagination/Paginations';
 import Loading from '../Loading/Loading';
+import { v4 as uuidv4 } from 'uuid';
 
 const NewsArticle = ({selectedSection,user}) => {
 
@@ -50,6 +51,7 @@ const NewsArticle = ({selectedSection,user}) => {
         if(readLater){
 			readLater = JSON.parse(readLater);
 			readLater.push({
+                news_id : uuidv4(),
                 user_id : user.id,
                 title : article.title,
                 url : article.url

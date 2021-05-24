@@ -1,0 +1,42 @@
+.no-saved-news{
+    height: calc(100vh - 50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.saved-news-container{
+    display: flex;
+    margin: 1rem auto;
+    flex-direction: column;
+    max-width: calc(min(700px,80%));
+    
+}
+
+.news{
+    display: flex;
+    border: 1px solid gray;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: .5rem;
+    border-radius: .5rem;
+    
+}
+
+.news a{
+    flex: 5;
+    transition: .5s;
+}
+.news a:hover{
+    transform: scale(1.01);
+    transition: .5s;
+}
+
+.news button{
+    flex: 1;
+}
+
+.delete{
+    background-color: rgb(238, 41, 41);
+    color: #fff;
+}

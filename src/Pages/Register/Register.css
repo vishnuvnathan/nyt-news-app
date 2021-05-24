@@ -18,7 +18,7 @@
 }
 
 .login-form h2{
-    color: #0089fa;
+    color: #323232;
 }
 
 
@@ -27,7 +27,7 @@
     margin-top: 10px;
     width: 50%;
     color: rgb(255, 255, 255);
-    background-color: #3aa6ff;
+    background-color: #323232;
     border: none;
     padding: 5px;border-radius: 7px;
     font-weight: bold;
@@ -36,7 +36,7 @@
 .login-container span{
     margin-top: 5px;
     font-size: .9rem;
-    color: #0073d1;
+    color: #676767;
 }
 
 .login-container span:hover{

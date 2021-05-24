@@ -37,4 +37,4 @@ useEffect(() => {
 		return <Loading/>
 }
 
-export default AuthRouter
+export default AuthRouter;

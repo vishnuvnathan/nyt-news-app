@@ -7,6 +7,7 @@ import AuthRouter from './Components/AuthRouter/AuthRouter';
 import Navbar from './Components/Navbar/Navbar';
 import Home from './Pages/Home/Home';
 import Profile from './Pages/Profile/Profile';
+import SavedNews from './Pages/SavedNews/SavedNews';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/register" component={Register}/>
         <Route exact path="/login" component={Login}/>
         <Route exact path='/profile' component ={Profile}/>
+        <Route exact path='/saved_news/:id' component ={SavedNews}/>
       </Switch>
     </div>
     </Router>

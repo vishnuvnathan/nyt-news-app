@@ -18,18 +18,20 @@ const Navbar = () => {
     }, [])
 
     return (
-        <Link to='/profile' style={{textDecoration:'none'}}>
             <nav>
                 <div className="logo-container">
-                    <img src="/logo.png" className="logo" alt="logo" />
+                    <Link to='/'>
+                        <img src="/logo.png" className="logo" alt="logo" />
+                    </Link>
                 </div>
-                <div className="profile">
-                    <FaUserCircle className="icon"/>
-                    {user && user.email}
-                </div>
+                <Link to='/profile' style={{textDecoration:'none'}}>
+                    <div className="profile">
+                        <FaUserCircle className="icon"/>
+                        {user && user.email}
+                    </div>
+                </Link>
                 
             </nav>
-        </Link>
     )
 }
 

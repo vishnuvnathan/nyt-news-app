@@ -5,6 +5,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { BiUserCircle } from "react-icons/bi";
 import CustomModal from '../../Components/CustomModal/CustomModal';
+import { Link } from 'react-router-dom';
 
 const Profile = () => {
 
@@ -25,8 +26,33 @@ const Profile = () => {
                 password : getUser.password
 			})
 		}
+        else{
+            window.location.href = '/';
+        }
+
     }, []);
 
+    const onDeleteAccount = (id) =>{
+        if(window.confirm('Do you want delete this account')){
+            let users = localStorage.getItem('users');
+            if(users){
+                users = JSON.parse(users);
+                let newUsersList = users.filter(function(event){
+                    return event.id !== id
+                });
+                localStorage.setItem('users',JSON.stringify(newUsersList));
+            }
+            localStorage.removeItem("loggedInUser");
+            localStorage.removeItem("isLoggedIn");
+            window.location.href = '/';
+        }
+    } ;
+
+    const onLogout = () =>{
+        localStorage.removeItem("loggedInUser");
+        localStorage.removeItem("isLoggedIn");
+        window.location.href = '/';
+    }
 
     if(user)
         return (
@@ -34,14 +60,29 @@ const Profile = () => {
                 <FaUserCircle className="icon"/>
                 <span><HiOutlineMail className="icon"/> <b>{user.email}</b></span>
                 <span><BiUserCircle className="icon"/> <b>{user.name}</b></span>
+
+                <span>
+                    <Link to ={`/saved_news/${user.id}`} style={{textDecoration:'none'}}>
+                        <button>
+                            Read saved news
+                        </button>
+                    </Link>
+                </span>
                 <span>
                     <button onClick={()=>setShowModal(true)}>
                         Change Name Or PassWord
                     </button>
                 </span>
+
                 <span>
-                    <button>
-                        Read saved news
+                <button className="delete" onClick={()=>onDeleteAccount(user.id)}>
+                        Delete Account
+                    </button>
+                </span>
+
+                <span>
+                    <button onClick={()=>onLogout()}>
+                        Logout
                     </button>
                 </span>
 
