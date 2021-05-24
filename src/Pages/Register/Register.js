@@ -7,7 +7,7 @@ import md5 from'md5';
 
 
 
-const Register = () => {
+const Register = (props) => {
 
     const [userList, setUserList] = useState([]);
     const [email, setEmail] = useState("");
@@ -69,7 +69,7 @@ const Register = () => {
                 newUserList.push(user);
                 localStorage.setItem('users',JSON.stringify(newUserList));
                 console.log(newUserList);
-                window.location.href="/login";
+                props.history.push("/login");
             }
         }
         else{

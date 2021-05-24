@@ -18,7 +18,7 @@ const SavedNews = (props) => {
         if(getUser){
 			getUser = JSON.parse(getUser);
             if(getUser.id !== props.match.params.id)
-                window.location.href = '/'
+                props.history.push('/');
             else{
                 let readLater = localStorage.getItem('readLater');
                 if(readLater){
@@ -33,7 +33,7 @@ const SavedNews = (props) => {
             }
         }
         else 
-            window.location.href = '/';
+            props.history.push('/');
     }, []);
 
 

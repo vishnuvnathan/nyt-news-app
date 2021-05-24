@@ -33,7 +33,7 @@ const Login = (props) => {
                         console.log("login");
                         localStorage.setItem('isLoggedIn',JSON.stringify(true));
                         localStorage.setItem('loggedInUser',JSON.stringify(user));
-                        window.location.href='/';
+                        props.history.push('/');
                     }
                 else
                     alert("Password is not correct")
