@@ -17,6 +17,6 @@ The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
 ### `Live Demo`
-https://app.netlify.com/sites/nyt-news-app/overview
+https://nyt-news-app.netlify.app/
 
 ## Screenshot are available in sceenshots folder
