@@ -3,12 +3,11 @@ import './Login.css';
 import TextField from '@material-ui/core/TextField';
 import {Link} from 'react-router-dom'; 
 import md5 from'md5';
-
+import { useForm } from 'react-hook-form';
 
 const Login = (props) => {
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const { register, handleSubmit, formState: { errors }} = useForm({ mode: "onBlur"});
 
     const [userList, setUserList] = useState([]);
 
@@ -24,11 +23,11 @@ const Login = (props) => {
 
     
 
-    const onLogin = (e) =>{
+    const onLogin = (data, e) =>{
         e.preventDefault();
-        let user =  userList.find(o => o.email === email);
+        let user =  userList.find(o => o.email === data.Email);
             if(user){
-                if(user.password === md5(password))
+                if(user.password === md5(data.Password))
                     {
                         console.log("login");
                         localStorage.setItem('isLoggedIn',JSON.stringify(true));
@@ -47,18 +46,21 @@ const Login = (props) => {
 
     return (
         <div className="login-container">
-            <form className="login-form" onSubmit={(e)=>onLogin(e)}>
+            <form className="login-form" onSubmit={handleSubmit(onLogin)}>
                 <h2>Login</h2>
                 <TextField
                     label="Email"
-                    type="email"
                     autoComplete="current-password"
                     variant="outlined"
                     size="small"
                     style={{margin:"5px"}}
-                    required
-                    onChange = {(e)=>{setEmail(e.target.value)}}
+                    {...register("Email", { required: "Email is required", 
+                        pattern: {
+                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                            message: "Invalid email address"
+                        } })} 
                 />
+                 {errors.Email && <p >{errors.Email?.message}</p>}
                 <TextField
                     label="Password"
                     type="password"
@@ -66,9 +68,9 @@ const Login = (props) => {
                     variant="outlined"
                     size="small"
                     style={{margin:"5px"}}
-                    required
-                    onChange = {(e)=>{setPassword(e.target.value)}}
+                    {...register("Password", { required: "Password is required" })}
                 />
+                 {errors.Password && <p>{errors.Password?.message}</p>}
                 <input  type="submit" />
             </form>
             <Link to="/register" value="submit"><span>New? Register here</span></Link> 
