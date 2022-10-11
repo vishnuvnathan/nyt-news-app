@@ -60,7 +60,7 @@ const Login = (props) => {
                             message: "Invalid email address"
                         } })} 
                 />
-                 {errors.Email && <p >{errors.Email?.message}</p>}
+                 {errors.Email && <div className="error">{errors.Email?.message}</div>}
                 <TextField
                     label="Password"
                     type="password"
@@ -70,7 +70,7 @@ const Login = (props) => {
                     style={{margin:"5px"}}
                     {...register("Password", { required: "Password is required" })}
                 />
-                 {errors.Password && <p>{errors.Password?.message}</p>}
+                 {errors.Password && <div className="error">{errors.Password?.message}</div>}
                 <input  type="submit" />
             </form>
             <Link to="/register" value="submit"><span>New? Register here</span></Link> 
