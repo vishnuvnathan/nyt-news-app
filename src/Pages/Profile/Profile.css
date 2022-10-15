@@ -1,25 +1,73 @@
-.profile-container{
-    height: calc(100vh - 50px);
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-    flex-direction: column;
-    margin-top: 3rem;
-    position: relative;
+.profile-container {
+  height: 100vh;
+  width: 93.8%;
+  display: flex;
+  align-items: center;
+  padding: 2.6rem;
+  flex-direction: column;
+  /* margin-top: 3rem; */
+  position: relative;
 }
-.profile-container .icon{
-    font-size: 5rem;
+.profile-container .icon {
+  font-size: 5rem;
 }
-.profile-container span{
-    padding: .5rem;
-    font-size: 1.1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 200px;
+.profile-container span {
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
-.profile-container span .icon{
-    margin-right: 1rem;
-    font-size: 1.1rem;
+.profile-container span .icon {
+  margin-right: 1rem;
+  font-size: 1.1rem;
+}
+.profile-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 
+  /* border: 1px solid red; */
+  padding: 50px 100px;
+  border-radius: 10px;
+  background: rgb(255, 255, 255);
+  /* backdrop-filter: saturate(180%) blur(10px); */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.profile-cover {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    rgb(236, 72, 153),
+    rgb(239, 68, 68),
+    rgb(234, 179, 8)
+  );
+}
+button {
+  background: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 0.25rem;
+  border-color: rgba(203, 213, 224, 1);
+  width: 100%;
+  cursor: pointer;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  margin: 0;
+}
+.delete:hover {
+  background: rgb(180, 30, 30);
+  color: #fff;
+}
+.logoutButton {
+  color: red;
+}
+button:hover {
+  background: rgb(214, 239, 255);
 }
