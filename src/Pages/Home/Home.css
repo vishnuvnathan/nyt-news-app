@@ -25,7 +25,6 @@
 .filter{
     position: absolute;
     top: 5px;
-    left: 5px;
     background-color: rgb(27, 27, 27);
     color: #fff;
 }
@@ -39,12 +38,21 @@
     color: #fff;
 }
 
+.navbar-close-btn{
+    font-size: 2rem;
+    cursor: pointer;
+    display: block;
+}
+
 @media screen and (min-width:768px){
     .sidebar{
         display: block;
     }
     .filter{
         display: none;
+    }
+    .navbar-close-btn{
+    display: none;
     }
 
 }

@@ -28,9 +28,10 @@ const Home = () => {
 		return (
 			<div className="home-container">
 				<div className={filter ? "sidebar open" : "sidebar"}>
+					<div className='navbar-close-btn' onClick={()=>setFilter(!filter)}>&times;</div>
 					<SectionListing selectedSection={selectedSection} setSelectedSection={setSelectedSection} setFilter={setFilter}/>
 				</div>
-				<button className={filter ? "filter filter-close" : "filter"} onClick={()=>setFilter(!filter)}>
+				{!filter && <button className={filter ? "filter filter-close" : "filter"} onClick={()=>setFilter(!filter)}>
 					{
 						filter ? 
 							"Close"
@@ -39,7 +40,7 @@ const Home = () => {
 					}
 
 
-				</button>
+				</button>}
 				<NewsArticle selectedSection={selectedSection} setSelectedSection={setSelectedSection} user={user}/>
 			</div>
 		);
